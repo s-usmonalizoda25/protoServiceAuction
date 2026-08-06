@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package auction;
+
+option go_package = "github.com/s-usmonalizoda25/AuctionService/proto/gen/auction";
+
+service UserService {
+    rpc HoldFunds (HoldFundsRequest) returns (HoldFundsResponse);
+    rpc ReleaseFunds (ReleaseFundsRequest) returns (ReleaseFundsResponse);
+}
+
+message HoldFundsRequest {
+    string user_id = 1;
+    double amount = 2;
+}
+
+message HoldFundsResponse {
+    bool success = 1;
+    string error_message = 2;
+}
+
+message ReleaseFundsRequest {
+    string user_id = 1;
+    double amount = 2;
+}
+
+message ReleaseFundsResponse {
+    bool success = 1; 
+}
