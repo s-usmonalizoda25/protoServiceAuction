@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package user;
+
+option go_package = "github.com/s-usmonalizoda25/protoAuction/gen/user;userv1";
+
+service UserService {
+  rpc Register(RegisterRequest) returns (RegisterResponse);
+  rpc Login(LoginRequest) returns (LoginResponse);
+  rpc GetProfile(GetProfileRequest) returns (GetProfileResponse);
+
+  rpc HoldFunds(HoldFundsRequest) returns (HoldFundsResponse);
+}
+
+message RegisterRequest {
+  string email = 1;
+  string password = 2;
+}
+
+message RegisterResponse {
+  int64 user_id = 1;
+  string email = 2;
+}
+
+message LoginRequest {
+  string email = 1;
+  string password = 2;
+}
+
+message LoginResponse {
+  string token = 1;
+  int64 user_id = 2;
+}
+
+message GetProfileRequest {
+  int64 user_id = 1;
+}
+
+message GetProfileResponse {
+  int64 user_id = 1;
+  string email = 2;
+  double balance = 3;
+  double held_amount = 4;
+}
+
+message HoldFundsRequest {
+  int64 user_id = 1;
+  double amount = 2;
+}
+
+message HoldFundsResponse {
+  bool success = 1;
+  string message = 2;
+}
