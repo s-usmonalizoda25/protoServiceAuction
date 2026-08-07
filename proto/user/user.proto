@@ -39,13 +39,13 @@ message GetProfileRequest {
 message GetProfileResponse {
   int64 user_id = 1;
   string email = 2;
-  double balance = 3;
-  double held_amount = 4;
+  int64 balance_minor = 3;
+  int64 held_amount_minor = 4;
 }
 
 message HoldFundsRequest {
   int64 user_id = 1;
-  double amount = 2;
+  int64 amount_minor = 2;
 }
 
 message HoldFundsResponse {

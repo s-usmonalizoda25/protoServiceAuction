@@ -1,4 +1,4 @@
-module github.com/s-usmonalizoda25/protoServiceAuction
+module github.com/s-usmonalizoda25/protoAuction
 
 go 1.26.5
 

@@ -274,13 +274,13 @@ func (x *GetProfileRequest) GetUserId() int64 {
 }
 
 type GetProfileResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserId        int64                  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	Email         string                 `protobuf:"bytes,2,opt,name=email,proto3" json:"email,omitempty"`
-	Balance       float64                `protobuf:"fixed64,3,opt,name=balance,proto3" json:"balance,omitempty"`
-	HeldAmount    float64                `protobuf:"fixed64,4,opt,name=held_amount,json=heldAmount,proto3" json:"held_amount,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	UserId          int64                  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Email           string                 `protobuf:"bytes,2,opt,name=email,proto3" json:"email,omitempty"`
+	BalanceMinor    int64                  `protobuf:"varint,3,opt,name=balance_minor,json=balanceMinor,proto3" json:"balance_minor,omitempty"`
+	HeldAmountMinor int64                  `protobuf:"varint,4,opt,name=held_amount_minor,json=heldAmountMinor,proto3" json:"held_amount_minor,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 func (x *GetProfileResponse) Reset() {
@@ -327,16 +327,16 @@ func (x *GetProfileResponse) GetEmail() string {
 	return ""
 }
 
-func (x *GetProfileResponse) GetBalance() float64 {
+func (x *GetProfileResponse) GetBalanceMinor() int64 {
 	if x != nil {
-		return x.Balance
+		return x.BalanceMinor
 	}
 	return 0
 }
 
-func (x *GetProfileResponse) GetHeldAmount() float64 {
+func (x *GetProfileResponse) GetHeldAmountMinor() int64 {
 	if x != nil {
-		return x.HeldAmount
+		return x.HeldAmountMinor
 	}
 	return 0
 }
@@ -344,7 +344,7 @@ func (x *GetProfileResponse) GetHeldAmount() float64 {
 type HoldFundsRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	UserId        int64                  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	Amount        float64                `protobuf:"fixed64,2,opt,name=amount,proto3" json:"amount,omitempty"`
+	AmountMinor   int64                  `protobuf:"varint,2,opt,name=amount_minor,json=amountMinor,proto3" json:"amount_minor,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -386,9 +386,9 @@ func (x *HoldFundsRequest) GetUserId() int64 {
 	return 0
 }
 
-func (x *HoldFundsRequest) GetAmount() float64 {
+func (x *HoldFundsRequest) GetAmountMinor() int64 {
 	if x != nil {
-		return x.Amount
+		return x.AmountMinor
 	}
 	return 0
 }
@@ -464,16 +464,15 @@ const file_user_proto_rawDesc = "" +
 	"\x05token\x18\x01 \x01(\tR\x05token\x12\x17\n" +
 	"\auser_id\x18\x02 \x01(\x03R\x06userId\",\n" +
 	"\x11GetProfileRequest\x12\x17\n" +
-	"\auser_id\x18\x01 \x01(\x03R\x06userId\"~\n" +
+	"\auser_id\x18\x01 \x01(\x03R\x06userId\"\x94\x01\n" +
 	"\x12GetProfileResponse\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\x03R\x06userId\x12\x14\n" +
-	"\x05email\x18\x02 \x01(\tR\x05email\x12\x18\n" +
-	"\abalance\x18\x03 \x01(\x01R\abalance\x12\x1f\n" +
-	"\vheld_amount\x18\x04 \x01(\x01R\n" +
-	"heldAmount\"C\n" +
+	"\x05email\x18\x02 \x01(\tR\x05email\x12#\n" +
+	"\rbalance_minor\x18\x03 \x01(\x03R\fbalanceMinor\x12*\n" +
+	"\x11held_amount_minor\x18\x04 \x01(\x03R\x0fheldAmountMinor\"N\n" +
 	"\x10HoldFundsRequest\x12\x17\n" +
-	"\auser_id\x18\x01 \x01(\x03R\x06userId\x12\x16\n" +
-	"\x06amount\x18\x02 \x01(\x01R\x06amount\"G\n" +
+	"\auser_id\x18\x01 \x01(\x03R\x06userId\x12!\n" +
+	"\famount_minor\x18\x02 \x01(\x03R\vamountMinor\"G\n" +
 	"\x11HoldFundsResponse\x12\x18\n" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x18\n" +
 	"\amessage\x18\x02 \x01(\tR\amessage2\xf9\x01\n" +
