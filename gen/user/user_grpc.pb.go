@@ -19,10 +19,13 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	UserService_Register_FullMethodName   = "/user.UserService/Register"
-	UserService_Login_FullMethodName      = "/user.UserService/Login"
-	UserService_GetProfile_FullMethodName = "/user.UserService/GetProfile"
-	UserService_HoldFunds_FullMethodName  = "/user.UserService/HoldFunds"
+	UserService_Register_FullMethodName     = "/user.UserService/Register"
+	UserService_Login_FullMethodName        = "/user.UserService/Login"
+	UserService_GetProfile_FullMethodName   = "/user.UserService/GetProfile"
+	UserService_HoldFunds_FullMethodName    = "/user.UserService/HoldFunds"
+	UserService_ReleaseFunds_FullMethodName = "/user.UserService/ReleaseFunds"
+	UserService_CaptureFunds_FullMethodName = "/user.UserService/CaptureFunds"
+	UserService_DepositFunds_FullMethodName = "/user.UserService/DepositFunds"
 )
 
 // UserServiceClient is the client API for UserService service.
@@ -33,6 +36,9 @@ type UserServiceClient interface {
 	Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginResponse, error)
 	GetProfile(ctx context.Context, in *GetProfileRequest, opts ...grpc.CallOption) (*GetProfileResponse, error)
 	HoldFunds(ctx context.Context, in *HoldFundsRequest, opts ...grpc.CallOption) (*HoldFundsResponse, error)
+	ReleaseFunds(ctx context.Context, in *ReleaseFundsRequest, opts ...grpc.CallOption) (*ReleaseFundsResponse, error)
+	CaptureFunds(ctx context.Context, in *CaptureFundsRequest, opts ...grpc.CallOption) (*CaptureFundsResponse, error)
+	DepositFunds(ctx context.Context, in *DepositFundsRequest, opts ...grpc.CallOption) (*DepositFundsResponse, error)
 }
 
 type userServiceClient struct {
@@ -83,6 +89,36 @@ func (c *userServiceClient) HoldFunds(ctx context.Context, in *HoldFundsRequest,
 	return out, nil
 }
 
+func (c *userServiceClient) ReleaseFunds(ctx context.Context, in *ReleaseFundsRequest, opts ...grpc.CallOption) (*ReleaseFundsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ReleaseFundsResponse)
+	err := c.cc.Invoke(ctx, UserService_ReleaseFunds_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *userServiceClient) CaptureFunds(ctx context.Context, in *CaptureFundsRequest, opts ...grpc.CallOption) (*CaptureFundsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CaptureFundsResponse)
+	err := c.cc.Invoke(ctx, UserService_CaptureFunds_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *userServiceClient) DepositFunds(ctx context.Context, in *DepositFundsRequest, opts ...grpc.CallOption) (*DepositFundsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DepositFundsResponse)
+	err := c.cc.Invoke(ctx, UserService_DepositFunds_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // UserServiceServer is the server API for UserService service.
 // All implementations must embed UnimplementedUserServiceServer
 // for forward compatibility.
@@ -91,6 +127,9 @@ type UserServiceServer interface {
 	Login(context.Context, *LoginRequest) (*LoginResponse, error)
 	GetProfile(context.Context, *GetProfileRequest) (*GetProfileResponse, error)
 	HoldFunds(context.Context, *HoldFundsRequest) (*HoldFundsResponse, error)
+	ReleaseFunds(context.Context, *ReleaseFundsRequest) (*ReleaseFundsResponse, error)
+	CaptureFunds(context.Context, *CaptureFundsRequest) (*CaptureFundsResponse, error)
+	DepositFunds(context.Context, *DepositFundsRequest) (*DepositFundsResponse, error)
 	mustEmbedUnimplementedUserServiceServer()
 }
 
@@ -112,6 +151,15 @@ func (UnimplementedUserServiceServer) GetProfile(context.Context, *GetProfileReq
 }
 func (UnimplementedUserServiceServer) HoldFunds(context.Context, *HoldFundsRequest) (*HoldFundsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method HoldFunds not implemented")
+}
+func (UnimplementedUserServiceServer) ReleaseFunds(context.Context, *ReleaseFundsRequest) (*ReleaseFundsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ReleaseFunds not implemented")
+}
+func (UnimplementedUserServiceServer) CaptureFunds(context.Context, *CaptureFundsRequest) (*CaptureFundsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CaptureFunds not implemented")
+}
+func (UnimplementedUserServiceServer) DepositFunds(context.Context, *DepositFundsRequest) (*DepositFundsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DepositFunds not implemented")
 }
 func (UnimplementedUserServiceServer) mustEmbedUnimplementedUserServiceServer() {}
 func (UnimplementedUserServiceServer) testEmbeddedByValue()                     {}
@@ -206,6 +254,60 @@ func _UserService_HoldFunds_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _UserService_ReleaseFunds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReleaseFundsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).ReleaseFunds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: UserService_ReleaseFunds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).ReleaseFunds(ctx, req.(*ReleaseFundsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _UserService_CaptureFunds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CaptureFundsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).CaptureFunds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: UserService_CaptureFunds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).CaptureFunds(ctx, req.(*CaptureFundsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _UserService_DepositFunds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DepositFundsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).DepositFunds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: UserService_DepositFunds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).DepositFunds(ctx, req.(*DepositFundsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // UserService_ServiceDesc is the grpc.ServiceDesc for UserService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -228,6 +330,18 @@ var UserService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "HoldFunds",
 			Handler:    _UserService_HoldFunds_Handler,
+		},
+		{
+			MethodName: "ReleaseFunds",
+			Handler:    _UserService_ReleaseFunds_Handler,
+		},
+		{
+			MethodName: "CaptureFunds",
+			Handler:    _UserService_CaptureFunds_Handler,
+		},
+		{
+			MethodName: "DepositFunds",
+			Handler:    _UserService_DepositFunds_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

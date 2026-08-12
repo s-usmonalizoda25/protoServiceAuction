@@ -445,6 +445,318 @@ func (x *HoldFundsResponse) GetMessage() string {
 	return ""
 }
 
+type ReleaseFundsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        int64                  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	AmountMinor   int64                  `protobuf:"varint,2,opt,name=amount_minor,json=amountMinor,proto3" json:"amount_minor,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ReleaseFundsRequest) Reset() {
+	*x = ReleaseFundsRequest{}
+	mi := &file_user_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ReleaseFundsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReleaseFundsRequest) ProtoMessage() {}
+
+func (x *ReleaseFundsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_user_proto_msgTypes[8]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReleaseFundsRequest.ProtoReflect.Descriptor instead.
+func (*ReleaseFundsRequest) Descriptor() ([]byte, []int) {
+	return file_user_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *ReleaseFundsRequest) GetUserId() int64 {
+	if x != nil {
+		return x.UserId
+	}
+	return 0
+}
+
+func (x *ReleaseFundsRequest) GetAmountMinor() int64 {
+	if x != nil {
+		return x.AmountMinor
+	}
+	return 0
+}
+
+type ReleaseFundsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Success       bool                   `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`
+	Message       string                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ReleaseFundsResponse) Reset() {
+	*x = ReleaseFundsResponse{}
+	mi := &file_user_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ReleaseFundsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReleaseFundsResponse) ProtoMessage() {}
+
+func (x *ReleaseFundsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_user_proto_msgTypes[9]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReleaseFundsResponse.ProtoReflect.Descriptor instead.
+func (*ReleaseFundsResponse) Descriptor() ([]byte, []int) {
+	return file_user_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *ReleaseFundsResponse) GetSuccess() bool {
+	if x != nil {
+		return x.Success
+	}
+	return false
+}
+
+func (x *ReleaseFundsResponse) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
+type CaptureFundsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        int64                  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	AmountMinor   int64                  `protobuf:"varint,2,opt,name=amount_minor,json=amountMinor,proto3" json:"amount_minor,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CaptureFundsRequest) Reset() {
+	*x = CaptureFundsRequest{}
+	mi := &file_user_proto_msgTypes[10]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CaptureFundsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CaptureFundsRequest) ProtoMessage() {}
+
+func (x *CaptureFundsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_user_proto_msgTypes[10]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CaptureFundsRequest.ProtoReflect.Descriptor instead.
+func (*CaptureFundsRequest) Descriptor() ([]byte, []int) {
+	return file_user_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *CaptureFundsRequest) GetUserId() int64 {
+	if x != nil {
+		return x.UserId
+	}
+	return 0
+}
+
+func (x *CaptureFundsRequest) GetAmountMinor() int64 {
+	if x != nil {
+		return x.AmountMinor
+	}
+	return 0
+}
+
+type CaptureFundsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Success       bool                   `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`
+	Message       string                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CaptureFundsResponse) Reset() {
+	*x = CaptureFundsResponse{}
+	mi := &file_user_proto_msgTypes[11]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CaptureFundsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CaptureFundsResponse) ProtoMessage() {}
+
+func (x *CaptureFundsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_user_proto_msgTypes[11]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CaptureFundsResponse.ProtoReflect.Descriptor instead.
+func (*CaptureFundsResponse) Descriptor() ([]byte, []int) {
+	return file_user_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *CaptureFundsResponse) GetSuccess() bool {
+	if x != nil {
+		return x.Success
+	}
+	return false
+}
+
+func (x *CaptureFundsResponse) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
+type DepositFundsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        int64                  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	AmountMinor   int64                  `protobuf:"varint,2,opt,name=amount_minor,json=amountMinor,proto3" json:"amount_minor,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DepositFundsRequest) Reset() {
+	*x = DepositFundsRequest{}
+	mi := &file_user_proto_msgTypes[12]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DepositFundsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DepositFundsRequest) ProtoMessage() {}
+
+func (x *DepositFundsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_user_proto_msgTypes[12]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DepositFundsRequest.ProtoReflect.Descriptor instead.
+func (*DepositFundsRequest) Descriptor() ([]byte, []int) {
+	return file_user_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *DepositFundsRequest) GetUserId() int64 {
+	if x != nil {
+		return x.UserId
+	}
+	return 0
+}
+
+func (x *DepositFundsRequest) GetAmountMinor() int64 {
+	if x != nil {
+		return x.AmountMinor
+	}
+	return 0
+}
+
+type DepositFundsResponse struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Success         bool                   `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`
+	NewBalanceMinor int64                  `protobuf:"varint,2,opt,name=new_balance_minor,json=newBalanceMinor,proto3" json:"new_balance_minor,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *DepositFundsResponse) Reset() {
+	*x = DepositFundsResponse{}
+	mi := &file_user_proto_msgTypes[13]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DepositFundsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DepositFundsResponse) ProtoMessage() {}
+
+func (x *DepositFundsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_user_proto_msgTypes[13]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DepositFundsResponse.ProtoReflect.Descriptor instead.
+func (*DepositFundsResponse) Descriptor() ([]byte, []int) {
+	return file_user_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *DepositFundsResponse) GetSuccess() bool {
+	if x != nil {
+		return x.Success
+	}
+	return false
+}
+
+func (x *DepositFundsResponse) GetNewBalanceMinor() int64 {
+	if x != nil {
+		return x.NewBalanceMinor
+	}
+	return 0
+}
+
 var File_user_proto protoreflect.FileDescriptor
 
 const file_user_proto_rawDesc = "" +
@@ -475,13 +787,34 @@ const file_user_proto_rawDesc = "" +
 	"\famount_minor\x18\x02 \x01(\x03R\vamountMinor\"G\n" +
 	"\x11HoldFundsResponse\x12\x18\n" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x18\n" +
-	"\amessage\x18\x02 \x01(\tR\amessage2\xf9\x01\n" +
+	"\amessage\x18\x02 \x01(\tR\amessage\"Q\n" +
+	"\x13ReleaseFundsRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\x03R\x06userId\x12!\n" +
+	"\famount_minor\x18\x02 \x01(\x03R\vamountMinor\"J\n" +
+	"\x14ReleaseFundsResponse\x12\x18\n" +
+	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x18\n" +
+	"\amessage\x18\x02 \x01(\tR\amessage\"Q\n" +
+	"\x13CaptureFundsRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\x03R\x06userId\x12!\n" +
+	"\famount_minor\x18\x02 \x01(\x03R\vamountMinor\"J\n" +
+	"\x14CaptureFundsResponse\x12\x18\n" +
+	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x18\n" +
+	"\amessage\x18\x02 \x01(\tR\amessage\"Q\n" +
+	"\x13DepositFundsRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\x03R\x06userId\x12!\n" +
+	"\famount_minor\x18\x02 \x01(\x03R\vamountMinor\"\\\n" +
+	"\x14DepositFundsResponse\x12\x18\n" +
+	"\asuccess\x18\x01 \x01(\bR\asuccess\x12*\n" +
+	"\x11new_balance_minor\x18\x02 \x01(\x03R\x0fnewBalanceMinor2\xce\x03\n" +
 	"\vUserService\x129\n" +
 	"\bRegister\x12\x15.user.RegisterRequest\x1a\x16.user.RegisterResponse\x120\n" +
 	"\x05Login\x12\x12.user.LoginRequest\x1a\x13.user.LoginResponse\x12?\n" +
 	"\n" +
 	"GetProfile\x12\x17.user.GetProfileRequest\x1a\x18.user.GetProfileResponse\x12<\n" +
-	"\tHoldFunds\x12\x16.user.HoldFundsRequest\x1a\x17.user.HoldFundsResponseB:Z8github.com/s-usmonalizoda25/protoAuction/gen/user;userv1b\x06proto3"
+	"\tHoldFunds\x12\x16.user.HoldFundsRequest\x1a\x17.user.HoldFundsResponse\x12E\n" +
+	"\fReleaseFunds\x12\x19.user.ReleaseFundsRequest\x1a\x1a.user.ReleaseFundsResponse\x12E\n" +
+	"\fCaptureFunds\x12\x19.user.CaptureFundsRequest\x1a\x1a.user.CaptureFundsResponse\x12E\n" +
+	"\fDepositFunds\x12\x19.user.DepositFundsRequest\x1a\x1a.user.DepositFundsResponseB:Z8github.com/s-usmonalizoda25/protoAuction/gen/user;userv1b\x06proto3"
 
 var (
 	file_user_proto_rawDescOnce sync.Once
@@ -495,31 +828,43 @@ func file_user_proto_rawDescGZIP() []byte {
 	return file_user_proto_rawDescData
 }
 
-var file_user_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
+var file_user_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
 var file_user_proto_goTypes = []any{
-	(*RegisterRequest)(nil),    // 0: user.RegisterRequest
-	(*RegisterResponse)(nil),   // 1: user.RegisterResponse
-	(*LoginRequest)(nil),       // 2: user.LoginRequest
-	(*LoginResponse)(nil),      // 3: user.LoginResponse
-	(*GetProfileRequest)(nil),  // 4: user.GetProfileRequest
-	(*GetProfileResponse)(nil), // 5: user.GetProfileResponse
-	(*HoldFundsRequest)(nil),   // 6: user.HoldFundsRequest
-	(*HoldFundsResponse)(nil),  // 7: user.HoldFundsResponse
+	(*RegisterRequest)(nil),      // 0: user.RegisterRequest
+	(*RegisterResponse)(nil),     // 1: user.RegisterResponse
+	(*LoginRequest)(nil),         // 2: user.LoginRequest
+	(*LoginResponse)(nil),        // 3: user.LoginResponse
+	(*GetProfileRequest)(nil),    // 4: user.GetProfileRequest
+	(*GetProfileResponse)(nil),   // 5: user.GetProfileResponse
+	(*HoldFundsRequest)(nil),     // 6: user.HoldFundsRequest
+	(*HoldFundsResponse)(nil),    // 7: user.HoldFundsResponse
+	(*ReleaseFundsRequest)(nil),  // 8: user.ReleaseFundsRequest
+	(*ReleaseFundsResponse)(nil), // 9: user.ReleaseFundsResponse
+	(*CaptureFundsRequest)(nil),  // 10: user.CaptureFundsRequest
+	(*CaptureFundsResponse)(nil), // 11: user.CaptureFundsResponse
+	(*DepositFundsRequest)(nil),  // 12: user.DepositFundsRequest
+	(*DepositFundsResponse)(nil), // 13: user.DepositFundsResponse
 }
 var file_user_proto_depIdxs = []int32{
-	0, // 0: user.UserService.Register:input_type -> user.RegisterRequest
-	2, // 1: user.UserService.Login:input_type -> user.LoginRequest
-	4, // 2: user.UserService.GetProfile:input_type -> user.GetProfileRequest
-	6, // 3: user.UserService.HoldFunds:input_type -> user.HoldFundsRequest
-	1, // 4: user.UserService.Register:output_type -> user.RegisterResponse
-	3, // 5: user.UserService.Login:output_type -> user.LoginResponse
-	5, // 6: user.UserService.GetProfile:output_type -> user.GetProfileResponse
-	7, // 7: user.UserService.HoldFunds:output_type -> user.HoldFundsResponse
-	4, // [4:8] is the sub-list for method output_type
-	0, // [0:4] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	0,  // 0: user.UserService.Register:input_type -> user.RegisterRequest
+	2,  // 1: user.UserService.Login:input_type -> user.LoginRequest
+	4,  // 2: user.UserService.GetProfile:input_type -> user.GetProfileRequest
+	6,  // 3: user.UserService.HoldFunds:input_type -> user.HoldFundsRequest
+	8,  // 4: user.UserService.ReleaseFunds:input_type -> user.ReleaseFundsRequest
+	10, // 5: user.UserService.CaptureFunds:input_type -> user.CaptureFundsRequest
+	12, // 6: user.UserService.DepositFunds:input_type -> user.DepositFundsRequest
+	1,  // 7: user.UserService.Register:output_type -> user.RegisterResponse
+	3,  // 8: user.UserService.Login:output_type -> user.LoginResponse
+	5,  // 9: user.UserService.GetProfile:output_type -> user.GetProfileResponse
+	7,  // 10: user.UserService.HoldFunds:output_type -> user.HoldFundsResponse
+	9,  // 11: user.UserService.ReleaseFunds:output_type -> user.ReleaseFundsResponse
+	11, // 12: user.UserService.CaptureFunds:output_type -> user.CaptureFundsResponse
+	13, // 13: user.UserService.DepositFunds:output_type -> user.DepositFundsResponse
+	7,  // [7:14] is the sub-list for method output_type
+	0,  // [0:7] is the sub-list for method input_type
+	0,  // [0:0] is the sub-list for extension type_name
+	0,  // [0:0] is the sub-list for extension extendee
+	0,  // [0:0] is the sub-list for field type_name
 }
 
 func init() { file_user_proto_init() }
@@ -533,7 +878,7 @@ func file_user_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_user_proto_rawDesc), len(file_user_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   8,
+			NumMessages:   14,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
