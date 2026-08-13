@@ -1,1 +1,0 @@
-protoc -I proto/user --go_out=gen/user --go_opt=paths=source_relative --go-grpc_out=gen/user --go-grpc_opt=paths=source_relative proto/user/user.proto

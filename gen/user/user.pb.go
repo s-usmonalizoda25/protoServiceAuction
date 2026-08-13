@@ -804,15 +804,13 @@ const file_user_user_proto_rawDesc = "" +
 	"\famount_minor\x18\x02 \x01(\x03R\vamountMinor\"\\\n" +
 	"\x14DepositFundsResponse\x12\x18\n" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess\x12*\n" +
-	"\x11new_balance_minor\x18\x02 \x01(\x03R\x0fnewBalanceMinor2\xce\x03\n" +
+	"\x11new_balance_minor\x18\x02 \x01(\x03R\x0fnewBalanceMinor2\xc0\x02\n" +
 	"\vUserService\x129\n" +
 	"\bRegister\x12\x15.user.RegisterRequest\x1a\x16.user.RegisterResponse\x120\n" +
 	"\x05Login\x12\x12.user.LoginRequest\x1a\x13.user.LoginResponse\x12?\n" +
 	"\n" +
 	"GetProfile\x12\x17.user.GetProfileRequest\x1a\x18.user.GetProfileResponse\x12<\n" +
 	"\tHoldFunds\x12\x16.user.HoldFundsRequest\x1a\x17.user.HoldFundsResponse\x12E\n" +
-	"\fReleaseFunds\x12\x19.user.ReleaseFundsRequest\x1a\x1a.user.ReleaseFundsResponse\x12E\n" +
-	"\fCaptureFunds\x12\x19.user.CaptureFundsRequest\x1a\x1a.user.CaptureFundsResponse\x12E\n" +
 	"\fDepositFunds\x12\x19.user.DepositFundsRequest\x1a\x1a.user.DepositFundsResponseB:Z8github.com/s-usmonalizoda25/protoAuction/gen/user;userv1b\x06proto3"
 
 var (
@@ -849,18 +847,14 @@ var file_user_user_proto_depIdxs = []int32{
 	2,  // 1: user.UserService.Login:input_type -> user.LoginRequest
 	4,  // 2: user.UserService.GetProfile:input_type -> user.GetProfileRequest
 	6,  // 3: user.UserService.HoldFunds:input_type -> user.HoldFundsRequest
-	8,  // 4: user.UserService.ReleaseFunds:input_type -> user.ReleaseFundsRequest
-	10, // 5: user.UserService.CaptureFunds:input_type -> user.CaptureFundsRequest
-	12, // 6: user.UserService.DepositFunds:input_type -> user.DepositFundsRequest
-	1,  // 7: user.UserService.Register:output_type -> user.RegisterResponse
-	3,  // 8: user.UserService.Login:output_type -> user.LoginResponse
-	5,  // 9: user.UserService.GetProfile:output_type -> user.GetProfileResponse
-	7,  // 10: user.UserService.HoldFunds:output_type -> user.HoldFundsResponse
-	9,  // 11: user.UserService.ReleaseFunds:output_type -> user.ReleaseFundsResponse
-	11, // 12: user.UserService.CaptureFunds:output_type -> user.CaptureFundsResponse
-	13, // 13: user.UserService.DepositFunds:output_type -> user.DepositFundsResponse
-	7,  // [7:14] is the sub-list for method output_type
-	0,  // [0:7] is the sub-list for method input_type
+	12, // 4: user.UserService.DepositFunds:input_type -> user.DepositFundsRequest
+	1,  // 5: user.UserService.Register:output_type -> user.RegisterResponse
+	3,  // 6: user.UserService.Login:output_type -> user.LoginResponse
+	5,  // 7: user.UserService.GetProfile:output_type -> user.GetProfileResponse
+	7,  // 8: user.UserService.HoldFunds:output_type -> user.HoldFundsResponse
+	13, // 9: user.UserService.DepositFunds:output_type -> user.DepositFundsResponse
+	5,  // [5:10] is the sub-list for method output_type
+	0,  // [0:5] is the sub-list for method input_type
 	0,  // [0:0] is the sub-list for extension type_name
 	0,  // [0:0] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name

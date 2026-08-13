@@ -10,9 +10,11 @@ service UserService {
   rpc GetProfile(GetProfileRequest) returns (GetProfileResponse);
 
   rpc HoldFunds(HoldFundsRequest) returns (HoldFundsResponse);
-  rpc ReleaseFunds(ReleaseFundsRequest) returns (ReleaseFundsResponse);
-  rpc CaptureFunds(CaptureFundsRequest) returns (CaptureFundsResponse);
   rpc DepositFunds(DepositFundsRequest) returns (DepositFundsResponse);
+
+  // ReleaseFunds и CaptureFunds намеренно не являются RPC — это внутренние
+  // обработчики событий RabbitMQ (bid.accepted, lot.closed) внутри user-service,
+  // не вызываются напрямую другими сервисами по сети.
 }
 
 message RegisterRequest {
