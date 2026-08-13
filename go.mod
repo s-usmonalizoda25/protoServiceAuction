@@ -1,6 +1,6 @@
 module github.com/s-usmonalizoda25/protoAuction
 
-go 1.24
+go 1.25.0
 
 require (
 	google.golang.org/grpc v1.83.0
